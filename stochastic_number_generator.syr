@@ -1,0 +1,398 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.30 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.30 secs
+ 
+--> Reading design: stochastic_number_generator.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "stochastic_number_generator.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "stochastic_number_generator"
+Output Format                      : NGC
+Target Device                      : xc3s100e-4-vq100
+
+---- Source Options
+Top Module Name                    : stochastic_number_generator
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "stochastic_number_generator.v" in library work
+Module <stochastic_number_generator> compiled
+No errors in compilation
+Analysis of file <"stochastic_number_generator.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <stochastic_number_generator> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <stochastic_number_generator>.
+Module <stochastic_number_generator> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <stochastic_number_generator>.
+    Related source file is "stochastic_number_generator.v".
+    Found 4-bit register for signal <L>.
+    Found 4-bit comparator less for signal <cmp_result1>.
+    Found 4-bit comparator less for signal <cmp_result2>.
+    Found 1-bit register for signal <cmp_result2_branch>.
+    Found 4-bit comparator less for signal <cmp_result3>.
+    Found 1-bit register for signal <cmp_result3_branch1>.
+    Found 1-bit register for signal <cmp_result3_branch2>.
+    Found 1-bit xor2 for signal <fb$xor0000> created at line 66.
+    Summary:
+	inferred   7 D-type flip-flop(s).
+	inferred   3 Comparator(s).
+Unit <stochastic_number_generator> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 4
+ 1-bit register                                        : 3
+ 4-bit register                                        : 1
+# Comparators                                          : 3
+ 4-bit comparator less                                 : 3
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 7
+ Flip-Flops                                            : 7
+# Comparators                                          : 3
+ 4-bit comparator less                                 : 3
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <stochastic_number_generator> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block stochastic_number_generator, actual ratio is 1.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 7
+ Flip-Flops                                            : 7
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : stochastic_number_generator.ngr
+Top Level Output File Name         : stochastic_number_generator
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 19
+
+Cell Usage :
+# BELS                             : 14
+#      LUT2                        : 3
+#      LUT4                        : 9
+#      MUXF5                       : 2
+# FlipFlops/Latches                : 7
+#      FDC                         : 7
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 18
+#      IBUF                        : 13
+#      OBUF                        : 5
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s100evq100-4 
+
+ Number of Slices:                        7  out of    960     0%  
+ Number of Slice Flip Flops:              7  out of   1920     0%  
+ Number of 4 input LUTs:                 12  out of   1920     0%  
+ Number of IOs:                          19
+ Number of bonded IOBs:                  19  out of     66    28%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 7     |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+rst                                | IBUF                   | 7     |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 3.778ns (Maximum Frequency: 264.690MHz)
+   Minimum input arrival time before clock: 4.332ns
+   Maximum output required time after clock: 8.237ns
+   Maximum combinational path delay: 8.496ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 3.778ns (frequency: 264.690MHz)
+  Total number of paths / destination ports: 22 / 7
+-------------------------------------------------------------------------
+Delay:               3.778ns (Levels of Logic = 3)
+  Source:            L_1 (FF)
+  Destination:       cmp_result2_branch (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: L_1 to cmp_result2_branch
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              5   0.591   0.668  L_1 (L_1)
+     LUT4:I2->O            2   0.704   0.482  cmp_result3135_SW0 (N12)
+     LUT4:I2->O            1   0.704   0.000  cmp_result31781 (cmp_result3178)
+     MUXF5:I1->O           1   0.321   0.000  cmp_result3178_f5 (cmp_result3)
+     FDC:D                     0.308          cmp_result3_branch1
+    ----------------------------------------
+    Total                      3.778ns (2.628ns logic, 1.150ns route)
+                                       (69.6% logic, 30.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 14 / 2
+-------------------------------------------------------------------------
+Offset:              4.332ns (Levels of Logic = 4)
+  Source:            X2<1> (PAD)
+  Destination:       cmp_result2_branch (FF)
+  Destination Clock: clk rising
+
+  Data Path: X2<1> to cmp_result2_branch
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.218   0.595  X2_1_IBUF (X2_1_IBUF)
+     LUT4:I0->O            2   0.704   0.482  cmp_result2135_SW0 (N14)
+     LUT4:I2->O            1   0.704   0.000  cmp_result21781 (cmp_result2178)
+     MUXF5:I1->O           1   0.321   0.000  cmp_result2178_f5 (cmp_result2)
+     FDC:D                     0.308          cmp_result2_branch
+    ----------------------------------------
+    Total                      4.332ns (3.255ns logic, 1.077ns route)
+                                       (75.1% logic, 24.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 11 / 5
+-------------------------------------------------------------------------
+Offset:              8.237ns (Levels of Logic = 4)
+  Source:            L_4 (FF)
+  Destination:       SBS (PAD)
+  Source Clock:      clk rising
+
+  Data Path: L_4 to SBS
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              8   0.591   0.932  L_4 (L_4)
+     LUT2:I0->O            1   0.704   0.455  SBS61_SW0 (N16)
+     LUT4:I2->O            1   0.704   0.455  SBS61 (SBS61)
+     LUT4:I2->O            1   0.704   0.420  SBS94 (SBS_OBUF)
+     OBUF:I->O                 3.272          SBS_OBUF (SBS)
+    ----------------------------------------
+    Total                      8.237ns (5.975ns logic, 2.262ns route)
+                                       (72.5% logic, 27.5% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 5 / 1
+-------------------------------------------------------------------------
+Delay:               8.496ns (Levels of Logic = 5)
+  Source:            X1<2> (PAD)
+  Destination:       SBS (PAD)
+
+  Data Path: X1<2> to SBS
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.218   0.595  X1_2_IBUF (X1_2_IBUF)
+     LUT4:I0->O            1   0.704   0.424  SBS33 (SBS33)
+     LUT4:I3->O            1   0.704   0.455  SBS61 (SBS61)
+     LUT4:I2->O            1   0.704   0.420  SBS94 (SBS_OBUF)
+     OBUF:I->O                 3.272          SBS_OBUF (SBS)
+    ----------------------------------------
+    Total                      8.496ns (6.602ns logic, 1.894ns route)
+                                       (77.7% logic, 22.3% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 4.80 secs
+ 
+--> 
+
+Total memory usage is 4497620 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

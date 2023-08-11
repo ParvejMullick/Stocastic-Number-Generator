@@ -1,0 +1,3 @@
+verilog work "stochastic_number_generator.v"
+verilog work "sng_test_bench.v"
+verilog work "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

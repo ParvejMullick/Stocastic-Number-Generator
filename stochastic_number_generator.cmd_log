@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "D:/Mini Project/FPGA_PROJECT/stochastic_number_generator.xst" -ofn "D:/Mini Project/FPGA_PROJECT/stochastic_number_generator.syr" 
+xst -intstyle ise -ifn "D:/Mini Project/FPGA_PROJECT/stochastic_number_generator.xst" -ofn "D:/Mini Project/FPGA_PROJECT/stochastic_number_generator.syr" 
